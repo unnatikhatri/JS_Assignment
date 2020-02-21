@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS ASSIGNMENT 1</title>
+
+
+</head>
+<body>
+   <form id="getDetails" method="get" onsubmit="GetDetails()">
+       <label for="firstname">First Name:</label><br>
+       <input type= "text" id="firstname" >
+       <br><br>
+
+       <label for="lastName">Last Name:</label><br>
+       <input type= "text" id="lastname" >
+       <br><br>
+
+       <label for="email">Email:</label><br>
+       <input type="email" id="email" >
+       <br><br>
+
+       <label for="contact">Contact Number:</label><br>
+       <input type="tel" id="contact" >
+       <br><br>
+
+       <label for="address">Address:</label><br>
+       <textarea id="address" rows="5" cols="30" >
+       </textarea>
+       <br><br>
+
+       <label for="username">Username:</label><br>
+       <input type="text" id="username" >
+       <br><br>
+
+       <label for="psw">Password:</label><br>
+       <input type="password" id="psw" >
+       <br><br>
+
+       <label>Gender:</label><br>
+       <input type="radio" id="male" class="gender" value="male"/>
+       <label for="male">Male</label>
+       <br>
+       <input type="radio" id="female" class="gender" value="female"/>
+       <label for="female">Female</label>
+       <br><br>
+
+       <label for="qualification">Qualification:</label><br>
+       <select id="qualification">
+           <option value="selectQ" selected>--Select--</option>
+           <option value="MTech">M.Tech</option>
+           <option value="BTech">B.Tech</option>
+           <option value="BE">B.E.</option>
+           <option value="BCA">BCA</option>
+           <option value="Diploma">Diploma</option>
+       </select>
+           <br><br>
+
+        <label for="exp">Experience:</label><br>
+        <select id="exp">
+           <option value="selectExp" selected>--Select--</option>
+           <option value="zero">0</option>
+           <option value="one">1</option>
+           <option value="two">2</option>
+           <option value="three">3</option>
+            <option value="four">4</option>
+            <option value="five">5</option>
+        </select>
+           <br><br>
+
+       <label>Coding Languages:</label><br>
+       <input type="checkbox" id="cpp" name="cpp" value="C++">
+       <label for ="cpp">C/C++</label>
+       <br>
+       <input type="checkbox" id="java" name="java" value="Java">
+       <label for ="java">Java</label>
+       <br>
+       <input type="checkbox" id="cs" name="cs" value="C#">
+       <label for ="cs">C#</label>
+       <br>
+       <input type="checkbox" id="php" name="php" value="PHP">
+       <label for ="php">PHP</label>
+       <br>
+       <input type="checkbox" id="py" name="py" value="Python">
+       <label for ="py">Python</label>
+       <br><br><br>
+   <!--button type="submit" id="submit">Submit</button-->
+       <input type="submit" value="Submit">
+
+
+   </form>
+
+ <script>
+var formData={};
+var qualifications = ["MTech","BTech","BE","BCA","Diploma"];
+var experiences = [0,1,2,3,4,5];
+
+var CodingLang = {
+      LanguageName: ["C++","Java", "C#","PHP","Python"],
+      IsEnabled: [true,false]
+      };
+
+//GetDetailsFunction
+function GetDetails()
+{
+    var FName = document.getElementById("firstname");
+    formData.firstName = FName.value;
+    
+    
+    var LName = document.getElementById('lastname');
+    formData.lastName = LName.value;
+
+    var Email = document.getElementById('email');
+    formData.emailId = Email.value;
+
+    var Cont = document.getElementById('contact');
+    formData.contact = Cont.value;
+
+    var Add = document.getElementById('address');
+    formData.address = Add.value;
+    
+    var UName = document.getElementById('username');
+    formData.UserName = UName.value;
+
+    var Pass = document.getElementById('psw');
+    formData.password = Pass.value;
+
+    var Gen = document.getElementsByClassName('gender');
+    console.log(formData.Gen);
+    //formData.Gender = Gen.value;    
+    
+    var qual = document.getElementById('qualification');
+    formData.Qualification = qual.value;
+
+    var experience = document.getElementById('exp');
+    formData.Experience = experience.value;
+
+
+
+    //console.log(formData);
+}
+
+    </script>
+</body>
+</html>
