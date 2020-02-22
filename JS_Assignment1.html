@@ -61,42 +61,45 @@
         <label for="exp">Experience:</label><br>
         <select id="exp">
            <option value="selectExp" selected>--Select--</option>
-           <option value="zero">0</option>
-           <option value="one">1</option>
-           <option value="two">2</option>
-           <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+           <option value="0">0</option>
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
         </select>
            <br><br>
 
        <label>Coding Languages:</label><br>
-       <input type="checkbox" id="cpp" name="cpp" value="C++">
+       <input type="checkbox" id="cpp" name="cpp" class = "language" value="C++">
        <label for ="cpp">C/C++</label>
        <br>
-       <input type="checkbox" id="java" name="java" value="Java">
+       <input type="checkbox" id="java" name="java" class = "language" value="Java" checked>
        <label for ="java">Java</label>
        <br>
-       <input type="checkbox" id="cs" name="cs" value="C#">
+       <input type="checkbox" id="cs" name="cs" class = "language" value="C#" checked>
        <label for ="cs">C#</label>
        <br>
-       <input type="checkbox" id="php" name="php" value="PHP">
+       <input type="checkbox" id="php" name="php" class = "language" value="PHP">
        <label for ="php">PHP</label>
        <br>
-       <input type="checkbox" id="py" name="py" value="Python">
+       <input type="checkbox" id="py" name="py" class = "language" value="Python">
        <label for ="py">Python</label>
        <br><br><br>
-   <!--button type="submit" id="submit">Submit</button-->
+   
        <input type="submit" value="Submit">
 
 
    </form>
 
  <script>
-var formData={};
-var qualifications = ["MTech","BTech","BE","BCA","Diploma"];
-var experiences = [0,1,2,3,4,5];
+var formData={}; //object creation
 
+var qualifications = ["MTech","BTech","BE","BCA","Diploma"];  //qualification array
+
+var experiences = [0,1,2,3,4,5];    //experience array   
+
+//coding language object 
 var CodingLang = {
       LanguageName: ["C++","Java", "C#","PHP","Python"],
       IsEnabled: [true,false]
@@ -107,39 +110,75 @@ function GetDetails()
 {
     var FName = document.getElementById("firstname");
     formData.firstName = FName.value;
-    
+    console.log("fname: " + formData.firstName);
     
     var LName = document.getElementById('lastname');
     formData.lastName = LName.value;
+    console.log("lname: " + formData.lastName);
 
     var Email = document.getElementById('email');
     formData.emailId = Email.value;
+    console.log("email: " + formData.emailId);
 
     var Cont = document.getElementById('contact');
     formData.contact = Cont.value;
+    console.log("contact: " + formData.contact);
 
     var Add = document.getElementById('address');
     formData.address = Add.value;
+    console.log("address: " + formData.address);
     
     var UName = document.getElementById('username');
     formData.UserName = UName.value;
+    console.log("uname: " + formData.UserName);
 
     var Pass = document.getElementById('psw');
     formData.password = Pass.value;
+    console.log("password: " + formData.password);
 
-    var Gen = document.getElementsByClassName('gender');
-    console.log(formData.Gen);
-    //formData.Gender = Gen.value;    
+    var Gen = document.querySelectorAll('.gender');
+    for(var i=0; i<Gen.length;i++)
+    {
+        if(Gen[i].checked==true)
+        {
+            formData.Gender = Gen[i].value;
+        }
+    }
+    console.log("gender: " + formData.Gender);
     
     var qual = document.getElementById('qualification');
-    formData.Qualification = qual.value;
+    for(var i=0;i<qualifications.length;i++)
+    {
+        if(qual.value == qualifications[i])
+        {
+            formData.Qualification = qualifications[i];
+        }
+    }
+    console.log("qualification: " + formData.Qualification);
 
     var experience = document.getElementById('exp');
-    formData.Experience = experience.value;
+    for(var i=0;i<experiences.length;i++)
+    {
+        if(experience.value == experiences[i])
+        {
+            formData.Experience = experiences[i];
+        }
+    }
+    console.log("experience: " + formData.Experience);
 
+    var lang = document.querySelectorAll('.language');
+    console.log("codingLanguage: ")
+    for(var i=0 ; i< lang.length ; i++)
+    {
+        if(lang[i].checked==true)
+        {
+            formData.CodingLanguage =lang[i].value;
+            console.log(formData.CodingLanguage);
+        }
+ 
+    }
 
-
-    //console.log(formData);
+    //console.log(formData); --> can display data in just one line
 }
 
     </script>
