@@ -1,53 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JS ASSIGNMENT 1</title>
-
-
 </head>
 <body>
-   <form id="getDetails" method="post" onsubmit="GetDetails()">
-       <label for="firstname">First Name:</label><br>
-       <input type= "text" id="firstname" >
-       <br><br>
+   <form id="getDetails" method="post">
+       <p><label for="firstname">First Name:</label><br>
+       <input type= "text" id="firstname"></p>
 
-       <label for="lastName">Last Name:</label><br>
-       <input type= "text" id="lastname" >
-       <br><br>
+       <p><label for="lastName">Last Name:</label><br>
+       <input type= "text" id="lastname" ></p>
 
-       <label for="email">Email:</label><br>
-       <input type="email" id="email" >
-       <br><br>
+       <p><label for="email">Email:</label><br>
+       <input type="email" id="email" ></p>
 
-       <label for="contact">Contact Number:</label><br>
-       <input type="tel" id="contact" >
-       <br><br>
+       <p><label for="contact">Contact Number:</label><br>
+       <input type="tel" id="contact" ></p>
+       
 
-       <label for="address">Address:</label><br>
-       <textarea id="address" rows="5" cols="30" >
-       </textarea>
-       <br><br>
+       <p><label for="address">Address:</label><br>
+       <textarea id="address" rows="3" cols="22" >
+       </textarea></p>
 
-       <label for="username">Username:</label><br>
-       <input type="text" id="username" >
-       <br><br>
+       <p><label for="username">Username:</label><br>
+       <input type="text" id="username" ></p>
 
-       <label for="psw">Password:</label><br>
-       <input type="password" id="psw" >
-       <br><br>
+       <p><label for="psw">Password:</label><br>
+       <input type="password" id="psw" ></p>
 
-       <label>Gender:</label><br>
+       <p><label>Gender:</label><br>
        <input type="radio" id="male" class="gender" value="male"/>
        <label for="male">Male</label>
        <br>
        <input type="radio" id="female" class="gender" value="female"/>
-       <label for="female">Female</label>
-       <br><br>
+       <label for="female">Female</label></p>
 
-       <label for="qualification">Qualification:</label><br>
+       <p><label for="qualification">Qualification:</label><br>
        <select id="qualification">
            <option value="selectQ" selected>--Select--</option>
            <option value="MTech">M.Tech</option>
@@ -55,10 +43,9 @@
            <option value="BE">B.E.</option>
            <option value="BCA">BCA</option>
            <option value="Diploma">Diploma</option>
-       </select>
-           <br><br>
+       </select></p>
 
-        <label for="exp">Experience:</label><br>
+       <p><label for="exp">Experience:</label><br>
         <select id="exp">
            <option value="selectExp" selected>--Select--</option>
            <option value="0">0</option>
@@ -67,10 +54,9 @@
            <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
-           <br><br>
+        </select></p>
 
-       <label>Coding Languages:</label><br>
+        <p><label>Coding Languages:</label><br>
        <input type="checkbox" id="cpp" name="cpp" class = "language" value="C++">
        <label for ="cpp">C/C++</label>
        <br>
@@ -85,9 +71,10 @@
        <br>
        <input type="checkbox" id="py" name="py" class = "language" value="Python">
        <label for ="py">Python</label>
-       <br><br><br>
+       </p>
+       <br>
    
-       <input type="submit" value="Submit">
+       <input type="submit" value="Submit" onclick="GetDetails()">
 
 
    </form>
